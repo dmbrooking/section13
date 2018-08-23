@@ -9,6 +9,7 @@ gem 'rails', '~> 5.2.1'
 
 gem 'devise', '~> 4.4.3'
 gem 'devise-token_authenticatable', '~> 1.0.1'
+gem 'graphql', '1.7.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
