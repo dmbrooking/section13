@@ -7,6 +7,7 @@ ruby '2.5.1'
 
 gem 'rails', '~> 5.2.1'
 
+gem 'devise', '~> 4.5'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -29,8 +30,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry-byebug', '~> 3.6.0'
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 group :development do
@@ -38,6 +40,14 @@ group :development do
   gem 'rubocop', '~> 0.58.2', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'database_cleaner', '~> 1.7.0'
+  gem 'factory_bot_rails', '~> 4.8.2', require: false
+  gem 'faker', '~> 1.9.1'
+  gem 'rspec-rails', '~> 3.7.2'
+  gem 'simplecov', '~> 0.16.1', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
