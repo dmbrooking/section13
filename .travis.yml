@@ -1,0 +1,11 @@
+language: ruby
+cache:
+  bundler: true
+sudo: false
+rvm:
+  - 2.5.1
+install: bundle install
+script:
+  - bundle exec rake db:setup
+  - bundle exec rspec
+  - bundle exec rubocop
