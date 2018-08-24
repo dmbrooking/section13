@@ -11,6 +11,11 @@
     "jest": "jest",
     "lint": "eslint ./*.js ./src/**/*.js"
   },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001"
+    }
+  },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",

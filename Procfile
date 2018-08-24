@@ -1,0 +1,2 @@
+web: cd client && PORT=3000 yarn start
+api: rails server -p 3001
