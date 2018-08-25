@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 Section13Schema = GraphQL::Schema.define do
-  mutation(Types::MutationType)
-  query(Types::QueryType)
+  mutation(Mutation)
+  query(Query)
 end
