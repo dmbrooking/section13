@@ -37,6 +37,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'overcommit', '~> 0.45.0'
   gem 'rubocop', '~> 0.58.2', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
