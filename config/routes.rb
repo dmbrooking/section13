@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   scope '/api' do
-    # mount point for React proxy to Rails api
-  end
+    api_version(module: 'V1', header: { name: 'API-Version', value: 'v1' }) do
+      post   'user_token'      => 'user_token#create'
 
-  post '/graphql', to: 'graphql#execute'
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+      # User actions
+      get    '/users'          => 'users#index'
+      get    '/users/current'  => 'users#current'
+      post   '/users/create'   => 'users#create'
+      patch  '/user/:id'       => 'users#update'
+      delete '/user/:id'       => 'users#destroy'
+    end
+  end
 end
