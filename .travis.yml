@@ -1,11 +1,21 @@
-language: ruby
+language: node_js
 cache:
   bundler: true
+  yarn: true
+  directories:
+    - client/node_modules
 sudo: false
-rvm:
-  - 2.5.1
-install: bundle install
+node_js:
+  - '8.11'
+before_install:
+  - rvm install 2.5.1
+  - gem install bundler
+  - nvm install 8.11.2
+install:
+  - bundle install
+  - cd client && yarn install && cd ..
 script:
   - bundle exec rake db:setup
   - bundle exec rspec
   - bundle exec rubocop
+  - cd client && yarn lint
