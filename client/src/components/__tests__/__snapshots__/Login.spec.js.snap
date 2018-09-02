@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> matches saved snapshot 1`] = `
+<Container
+  className="vertical-center"
+  tag="div"
+>
+  <img
+    alt="background"
+    className="bg"
+    src="background.jpg"
+  />
+  <Row
+    className="justify-content-sm-center"
+    tag="div"
+  >
+    <Col
+      className="align-self-center"
+      lg="6"
+      md="7"
+      sm="8"
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Card
+        tag="div"
+      >
+        <CardBody
+          tag="div"
+        >
+          <CardTitle
+            className="text-center"
+            tag="h5"
+          >
+            <div>
+              <h4>
+                Section 13
+              </h4>
+            </div>
+          </CardTitle>
+          <br />
+          <Form
+            data-testid="loginForm"
+            onSubmit={[Function]}
+            tag="form"
+          >
+            <FormGroup
+              tag="div"
+            >
+              <Label
+                for="emailInput"
+                tag="label"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                Email
+              </Label>
+              <Input
+                id="emailInput"
+                name="email"
+                onChange={[Function]}
+                placeholder="Enter your email address"
+                type="email"
+                value=""
+              />
+            </FormGroup>
+            <FormGroup
+              tag="div"
+            >
+              <Label
+                for="passwordInput"
+                tag="label"
+                widths={
+                  Array [
+                    "xs",
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ]
+                }
+              >
+                Password
+              </Label>
+              <Input
+                id="passwordInput"
+                name="password"
+                onChange={[Function]}
+                placeholder="Enter your password"
+                type="password"
+                value=""
+              />
+            </FormGroup>
+            <FormGroup
+              tag="div"
+            >
+              <Button
+                className="button button--blue"
+                color="secondary"
+                tag="button"
+                type="submit"
+              >
+                Log In
+              </Button>
+            </FormGroup>
+          </Form>
+        </CardBody>
+      </Card>
+    </Col>
+  </Row>
+</Container>
+`;

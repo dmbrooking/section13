@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router'
 import {
   Container, Row, Col, Button, Form, FormGroup,
-  FormText, Label, Input, Card, CardTitle, CardBody
+  Label, Input, Card, CardTitle, CardBody
 } from 'reactstrap'
 
 import '../styles.css'
@@ -49,7 +48,7 @@ class Login extends React.Component {
                   </div>
                 </CardTitle>
                 <br />
-                <Form onSubmit={this.handleSubmit}>
+                <Form data-testid='loginForm' onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <Label for='emailInput'>Email</Label>
                     <Input
@@ -71,9 +70,6 @@ class Login extends React.Component {
                       value={this.state.password}
                       onChange={this.updatePassword}
                     />
-                    <FormText color='muted' className='text-right'>
-                      <Link to='/forgot_password'>Forgot your password?</Link>
-                    </FormText>
                   </FormGroup>
                   <FormGroup>
                     <Button type='submit' className='button button--blue'>

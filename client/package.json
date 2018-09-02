@@ -52,6 +52,7 @@
     "jest-enzyme": "^6.0.3",
     "react-flow-types": "^0.1.1",
     "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3",
     "standard": "^12.0.1"
   },
   "jest": {
@@ -72,6 +73,9 @@
       }
     },
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "testEnvironment": "enzyme",
     "transformIgnorePatterns": [
       "/node_modules/"
@@ -85,8 +89,13 @@
   },
   "standard": {
     "globals": [
+      "beforeEach",
+      "describe",
+      "expect",
       "it",
-      "localStorage"
+      "jest",
+      "localStorage",
+      "shallow"
     ],
     "parser": "babel-eslint"
   }

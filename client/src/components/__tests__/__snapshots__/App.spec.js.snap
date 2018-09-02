@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> matches saved snapshot 1`] = `
+<div>
+  <Connect(Connect(NavBar)) />
+  <div
+    className="container"
+    style={
+      Object {
+        "marginTop": "50px",
+      }
+    }
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-12"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -8,7 +8,7 @@ import { BrowserRouter, Router, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css'
 
 import History from './history'
-import { LOGIN } from './actions/auth'
+import * as types from './constants/ActionTypes'
 import reducers from './reducers'
 import Routes from './components/Routes'
 
@@ -22,7 +22,7 @@ const store = createStore(
 const token = localStorage.getItem('token')
 
 if (token) {
-  store.dispatch({ type: LOGIN })
+  store.dispatch({ type: types.LOGIN })
 }
 
 ReactDOM.render(

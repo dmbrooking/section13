@@ -1,6 +1,4 @@
-import {
-  LOGIN, LOGIN_SUCCESS, LOGIN_ERROR, LOGOUT
-} from '../actions/auth'
+import * as types from '../constants/ActionTypes'
 
 const INITIAL_STATE = {
   error: '',
@@ -9,13 +7,13 @@ const INITIAL_STATE = {
 
 export default function authReducer (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case LOGIN:
+    case types.LOGIN:
       return { ...state, error: '', authenticated: true }
-    case LOGIN_SUCCESS:
+    case types.LOGIN_SUCCESS:
       return { ...state, error: '', authenticated: true }
-    case LOGOUT:
+    case types.LOGOUT:
       return { ...state, authenticated: false }
-    case LOGIN_ERROR:
+    case types.LOGIN_ERROR:
       return { ...state, error: action.payload }
     default:
       return state
