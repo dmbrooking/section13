@@ -21,7 +21,7 @@ export function loginUser (email, password) {
     axios.post(`${ROOT_API_URL}/user_token`, { auth: { email, password } })
       .then((response) => {
         dispatch({ type: types.LOGIN_SUCCESS })
-        localStorage.setItem('token', response.data.token)
+        localStorage.setItem('token', response.data.jwt)
       })
       .catch(() => {
         dispatch(authError('Bad Login Info'))

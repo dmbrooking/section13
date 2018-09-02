@@ -35,7 +35,7 @@ class NavBar extends React.Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className='ml-auto' navbar>
             <NavItem>
-              <NavLink onClick={this.handleLogout}>Log Out</NavLink>
+              <NavLink onClick={this.handleLogout} style={{ cursor: 'pointer' }}>Log Out</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
