@@ -18,10 +18,11 @@ export function logoutUser () {
 
 export function loginUser (email, password) {
   return (dispatch) => {
-    axios.post(`${ROOT_API_URL}/user_token`, { auth: { email, password } })
+    axios.post(`${ROOT_API_URL}/login`, { email, password })
       .then((response) => {
+        console.log(response)
         dispatch({ type: types.LOGIN_SUCCESS })
-        localStorage.setItem('token', response.data.jwt)
+        localStorage.setItem('token', response.data.auth_token)
       })
       .catch(() => {
         dispatch(authError('Bad Login Info'))

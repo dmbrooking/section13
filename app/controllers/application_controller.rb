@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::API
-  include Knock::Authenticable
+  include Response
+  include ExceptionHandler
 
-  protected
+  before_action :authorize_request
+  attr_reader :current_user
 
-  def authorize_as_admin
-    return_unauthorized unless !current_user.nil? && current_user.admin?
+  private
+
+  # Check for valid request token and return user
+  def authorize_request
+    @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
   end
 end

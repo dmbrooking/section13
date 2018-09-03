@@ -10,6 +10,10 @@ AllCops:
 Rails:
   Enabled: true
 
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
 Metrics/LineLength:
   Max: 120
 
