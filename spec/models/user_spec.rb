@@ -1,6 +1,10 @@
 describe User do
   subject { build(:user) }
 
+  describe 'associations' do
+    it { is_expected.to belong_to(:company) }
+  end
+
   describe '#email' do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_uniqueness_of(:email) }
