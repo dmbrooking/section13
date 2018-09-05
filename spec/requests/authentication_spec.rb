@@ -22,6 +22,8 @@ describe 'Authentication', type: :request do
 
       it 'returns an authentication token' do
         expect(json['auth_token']).not_to be_nil
+        expect(json['user']).not_to be_nil
+        expect(json['user']['email']).to eq(user.email)
       end
     end
 

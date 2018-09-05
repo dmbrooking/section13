@@ -14,12 +14,10 @@ describe Quarter do
   end
 
   describe '#active' do
-    it { is_expected.to validate_inclusion_of(:active).in_array([true, false]) }
-
     it 'only allows one active record to be saved' do
       subject.active = true
       subject.save
-      expect { create(:quarter, active: true) }.to raise_exception(nil)
+      expect { create(:quarter, active: true) }.to raise_exception(ActiveRecord::RecordInvalid)
     end
   end
 

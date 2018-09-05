@@ -20,8 +20,7 @@ export function loginUser (email, password) {
   return (dispatch) => {
     axios.post(`${ROOT_API_URL}/login`, { email, password })
       .then((response) => {
-        console.log(response)
-        dispatch({ type: types.LOGIN_SUCCESS })
+        dispatch({ type: types.LOGIN_SUCCESS, user: response.data.user })
         localStorage.setItem('token', response.data.auth_token)
       })
       .catch(() => {
