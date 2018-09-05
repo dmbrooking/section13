@@ -8,8 +8,8 @@ module ExceptionHandler
   included do
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_request
     rescue_from ExceptionHandler::AuthenticationError, with: :unauthorized_request
-    rescue_from ExceptionHandler::MissingToken, with: :unprocessable_entity_request
-    rescue_from ExceptionHandler::InvalidToken, with: :unprocessable_entity_request
+    rescue_from ExceptionHandler::MissingToken, with: :unauthorized_request
+    rescue_from ExceptionHandler::InvalidToken, with: :unauthorized_request
 
     rescue_from ActiveRecord::RecordNotFound do |e|
       json_response({ message: e.message }, :not_found)
